@@ -7,12 +7,13 @@ body, html {
 }
 
 header {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0); /* Zmieniono na całkowicie przezroczysty */
     padding: 10px 20px;
     color: white;
     position: fixed;
     width: 100%;
     top: 0;
+    transition: background 0.3s ease-in-out;
 }
 
 .navbar {
@@ -34,6 +35,42 @@ nav ul li a {
     color: white;
     text-decoration: none;
 }
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    position: relative;
+    background: #000;
+}
+
+.photo-grid {
+    display: flex;
+    width: 80%; /* Dostosuj szerokość kontenera zdjęć do potrzeb */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-image, .right-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-image img, .right-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.center-text {
+    flex: 2;
+    font-size: 24px;
+    z-index: 2;
+}
 
 .buy-button {
     background-color: purple;
@@ -52,15 +89,7 @@ nav ul li a {
     padding-top: 60px; /* Adjust based on header height */
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
+
 #blog {
     text-align: center;
     padding: 40px 20px;
@@ -101,4 +130,13 @@ footer {
 .post p {
     font-size: 16px;
     color: #666;
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
