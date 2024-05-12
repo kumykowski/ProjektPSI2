@@ -1,13 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Efekt przejrzystości dla paska nawigacji po przewinięciu strony
-    const navbar = document.querySelector('.navbar');
-    window.onscroll = () => {
-        if (window.scrollY > 50) {
-            navbar.classList.remove('transparent');
-            navbar.style.background = 'rgba(0, 0, 0, 0.8)';
-        } else {
-            navbar.classList.add('transparent');
-            navbar.style.background = 'rgba(0, 0, 0, 0)';
+    const header = document.querySelector('header');
+    let lastScrollTop = 0;
+
+    window.addEventListener('scroll', function() {
+        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Dodanie warunku dla góry strony
+        if (currentScroll <= 0) {
+            header.classList.add('expanded');
+            header.classList.remove('hidden');
+        } else if (currentScroll > lastScrollTop && currentScroll > 100) {
+            // Użytkownik przewija w dół
+            header.classList.add('hidden');
+            header.classList.remove('expanded');
+        } else if (currentScroll < lastScrollTop) {
+            // Użytkownik przewija w górę
+            header.classList.remove('hidden');
         }
-    };
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Aktualizacja ostatniej znanej pozycji scrolla
+    }, false);
 });

@@ -1,40 +1,87 @@
-body, html {
+html, body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: #000;
+    background: #FFFFFF;
     color: white;
+    overflow-x: hidden; /* Zapobiega poziomemu przewijaniu jeśli elementy wychodzą poza ekran */
 }
-
 header {
-    background: rgba(0, 0, 0, 0); /* Zmieniono na całkowicie przezroczysty */
-    padding: 10px 20px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    padding: 0 20px;
     color: white;
+    top: 0;
     position: fixed;
     width: 100%;
-    top: 0;
-    transition: background 0.3s ease-in-out;
+    box-sizing: border-box;
+    z-index: 1000;
+    height: 60px; /* Normalna wysokość */
+    transition: height 0.5s ease-out, background 0.5s ease-out, padding 0.5s ease-out; /* Dodanie przejścia dla padding */
+}
+
+header.expanded {
+    height: 80px; /* Zwiększona wysokość na górze */
+    padding: 0 40px; /* Większy padding */
+    transition: height 0.5s ease-in, background 0.5s ease-in, padding 0.5s ease-in;
+}   
+
+header.hidden {
+    height: 0; /* Pasek chowany */
+    overflow: hidden; /* Ukrywa zawartość gdy pasek jest chowany */
+    transition: height 0.5s ease-in, background 0.5s ease-in, padding 0.5s ease-in;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    flex-grow: 1;
+    font-size: 30px; /* Zwiększona czcionka dla logo */
+    text-align: left;
+    margin-right: 20px; /* Dodatkowy margines z prawej strony */
+    font-weight: 450;
+    letter-spacing: 5px;
+}
+
+.nav-links {
+    flex-grow: 15; /* Zmniejszenie flex-grow, aby skupić linki bliżej środka */
+    display: flex;
+    justify-content: left; /* Centrowanie linków */
+    align-items: left;
 }
 
 nav ul {
     list-style-type: none;
     display: flex;
-}
-
-nav ul li {
-    margin-right: 20px;
+    padding: 0;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
+    padding: 0 15px; /* Zwiększenie odstępu między linkami */
 }
+
+.buy-button {
+    text-align: right;
+    background-color: purple;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+
+}
+
+
+
 .hero {
     display: flex;
     align-items: center;
@@ -53,31 +100,12 @@ nav ul li a {
     align-items: center;
 }
 
-.left-image, .right-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.left-image img, .right-image img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
 
 .center-text {
     flex: 2;
     font-size: 24px;
     z-index: 2;
-}
-
-.buy-button {
-    background-color: purple;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    cursor: pointer;
 }
 
 .hero {
@@ -103,18 +131,34 @@ nav ul li a {
 
 .posts {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Zapewnia równomierne rozmieszczenie postów */
+    margin: 0 auto; /* Centruje posty na stronie */
+    max-width: 1200px; /* Maksymalna szerokość kontenera postów */
+    padding: 20px; /* Odstęp od krawędzi kontenera */
 }
 
 .post {
     background: white;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    width: 300px;
-    margin: 20px;
+    width: calc(33.333% - 20px); /* Szerokość dla trzech postów w rzędzie z odjęciem marginesów */
+    margin: 10px; /* Margines między postami */
     padding: 20px;
     box-sizing: border-box;
 }
+
+@media (max-width: 1200px) {
+    .post {
+        width: calc(50% - 20px); /* Dwa posty w linii dla ekranów mniejszych niż 1200px */
+    }
+}
+
+@media (max-width: 768px) {
+    .post {
+        width: 100%; /* Jeden post na linii dla bardzo małych ekranów */
+    }
+}
+
 
 .post img {
     width: 100%;
@@ -131,6 +175,8 @@ nav ul li a {
     font-size: 16px;
     color: #666;
 }
+
+
 footer {
     background-color: #333;
     color: white;
@@ -140,3 +186,90 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+.left-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -200px; /* Regulacja położenia w pionie */
+}
+
+.right-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 300px; /* Regulacja położenia w pionie */
+}
+
+.right-image img {
+    width:  110%; /* Zmniejszenie szerokości zdjęcia */
+    height: auto;
+    object-fit: cover;
+}
+
+.left-image img {
+    width: 140%; /* Zmniejszenie szerokości zdjęcia */
+    height: auto;
+    object-fit: cover;
+}
+
+.pricing-section {
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    color: #333;
+
+}
+
+.pricing-table {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 960px;
+}
+
+.plan {
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+}
+
+.plan.recommended {
+    background: #e0e0e0;
+    border-color: #ccc;
+}
+
+.plan h3 {
+    color: #666;
+}
+
+.plan .price {
+    font-size: 24px;
+    color: #333;
+}
+
+.plan .features {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.plan .features li {
+    padding: 10px 0;
+}
+
+.plan button.buy {
+    background-color: #5c67f2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+    
