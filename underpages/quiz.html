@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - CodeAcademy</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .quiz-question {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .quiz-question.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .quiz-question.answered .quiz-option {
+            pointer-events: none;
+        }
+        .quiz-summary {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <li><a href="/index.html"><span class="code">Code</span> <span class="academy">Academy</span></a></li>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="kurs.html">Kursy</a></li>
+                    <li><a href="quiz.html">Quizy</a></li>
+                    <li><a href="onas.html">O nas</a></li>
+                    <li><a href="/index.html#testimonials">Opinie</a></li>
+                    <li><a href="cennik.html">Cennik</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="quiz" class="quiz-section">
+            <div class="quiz-container">
+                <div class="quiz-question" data-question-id="1">
+                    <h2>Czy 2+2 to 4?</h2>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="true">A. Tak</button>
+                        <button class="quiz-option" data-correct="false">B. Nie</button>
+                        <button class="quiz-option" data-correct="false">C. Nie wiem</button>
+                        <button class="quiz-option" data-correct="false">D. Może</button>
+                    </div>
+                </div>
+                <div class="quiz-question" data-question-id="2">
+                    <h2>Co oznacza HTML?</h2>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="true">A. HyperText Markup Language</button>
+                        <button class="quiz-option" data-correct="false">B. Home Tool Markup Language</button>
+                        <button class="quiz-option" data-correct="false">C. Hyperlinks and Text Markup Language</button>
+                        <button class="quiz-option" data-correct="false">D. Hyper Tool Markup Language</button>
+                    </div>
+                </div>
+                <div class="quiz-question" data-question-id="3">
+                    <h2>Co to jest CSS?</h2>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="true">A. Cascading Style Sheets</button>
+                        <button class="quiz-option" data-correct="false">B. Computer Style Sheets</button>
+                        <button class="quiz-option" data-correct="false">C. Creative Style Sheets</button>
+                        <button class="quiz-option" data-correct="false">D. Colorful Style Sheets</button>
+                    </div>
+                </div>
+                <div class="quiz-question" data-question-id="4">
+                    <h2>Jakiego języka używasz do stylowania stron internetowych?</h2>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="true">A. CSS</button>
+                        <button class="quiz-option" data-correct="false">B. HTML</button>
+                        <button class="quiz-option" data-correct="false">C. Python</button>
+                        <button class="quiz-option" data-correct="false">D. JavaScript</button>
+                    </div>
+                </div>
+                <div class="quiz-question" data-question-id="5">
+                    <h2>Co to jest JavaScript?</h2>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="true">A. Język programowania</button>
+                        <button class="quiz-option" data-correct="false">B. Język stylowania</button>
+                        <button class="quiz-option" data-correct="false">C. Język znaczników</button>
+                        <button class="quiz-option" data-correct="false">D. Język baz danych</button>
+                    </div>
+                </div>
+                <div class="quiz-question" data-question-id="6">
+                    <h2>Co to jest Python?</h2>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="true">A. Język programowania</button>
+                        <button class="quiz-option" data-correct="false">B. Framework</button>
+                        <button class="quiz-option" data-correct="false">C. Biblioteka</button>
+                        <button class="quiz-option" data-correct="false">D. Język znaczników</button>
+                    </div>
+                </div>
+                <div class="quiz-question" data-question-id="7">
+                    <h2>Co to jest Git?</h2>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="true">A. System kontroli wersji</button>
+                        <button class="quiz-option" data-correct="false">B. Język programowania</button>
+                        <button class="quiz-option" data-correct="false">C. Edytor tekstu</button>
+                        <button class="quiz-option" data-correct="false">D. Narzędzie do debugowania</button>
+                    </div>
+                </div>
+                <div class="quiz-question" data-question-id="8">
+                    <h2>Co to jest API?</h2>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="true">A. Interfejs programowania aplikacji</button>
+                        <button class="quiz-option" data-correct="false">B. Język programowania</button>
+                        <button class="quiz-option" data-correct="false">C. Baza danych</button>
+                        <button class="quiz-option" data-correct="false">D. Narzędzie do testowania</button>
+                    </div>
+                </div>
+                <div class="quiz-question" data-question-id="9">
+                    <h2>Co to jest SQL?</h2>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="true">A. Język zapytań do baz danych</button>
+                        <button class="quiz-option" data-correct="false">B. Język programowania</button>
+                        <button class="quiz-option" data-correct="false">C. Framework</button>
+                        <button class="quiz-option" data-correct="false">D. Edytor tekstu</button>
+                    </div>
+                </div>
+                <div class="quiz-question" data-question-id="10">
+                    <h2>Co to jest JSON?</h2>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="true">A. Format wymiany danych</button>
+                        <button class="quiz-option" data-correct="false">B. Język programowania</button>
+                        <button class="quiz-option" data-correct="false">C. System kontroli wersji</button>
+                        <button class="quiz-option" data-correct="false">D. Narzędzie do testowania</button>
+                    </div>
+                </div>
+                <div class="quiz-question" data-question-id="11">
+                    <h2>Co to jest HTTP?</h2>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="true">A. Protokół przesyłania danych</button>
+                        <button class="quiz-option" data-correct="false">B. Język programowania</button>
+                        <button class="quiz-option" data-correct="false">C. Framework</button>
+                        <button class="quiz-option" data-correct="false">D. Baza danych</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz-summary" class="quiz-summary">
+            <h2>Podsumowanie Quizu</h2>
+            <p class="summary-results"></p>
+            <button class="btn primary" onclick="retryQuiz()">Spróbuj ponownie</button>
+        </section>
+
+        <section id="quiz-info" class="quiz-info">
+            <h2>Dlaczego warto zrobić nasz quiz?</h2>
+            <p>Nasz quiz został zaprojektowany, aby dokładnie sprawdzić Twoją wiedzę i pomóc Ci zidentyfikować obszary, które wymagają poprawy. Dzięki naszym quizom możesz skutecznie śledzić swoje postępy i doskonalić swoje umiejętności programistyczne.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CodeAcademy. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <script src="/javascript/quiz.js"></script>
+</body>
+</html>

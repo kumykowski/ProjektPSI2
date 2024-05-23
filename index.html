@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeAcademy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html"><span class="code">Code</span> <span class="academy">Academy</span></a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="/underpages/kurs.html">Kursy</a></li>
+                    <li><a href="/underpages/quiz.html">Quizy</a></li>
+                    <li><a href="/underpages/onas.html">O nas</a></li>
+                    <li><a href="#testimonials">Opinie</a></li>
+                    <li><a href="/underpages/cennik.html">Cennik</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text" data-aos="fade-up">
+                <h1>Ucz się programowania z CodeAcademy</h1>
+                <p>Dołącz do naszej społeczności i rozwijaj swoje umiejętności programistyczne dzięki interaktywnym kursom i quizom.</p>
+                <div class="hero-buttons">
+                    <button class="btn primary" onclick="scrollToSection('courses')">Zapisz się teraz</button>
+                    <button class="btn" onclick="scrollToSection('about')">Dowiedz się więcej</button>
+                </div>
+            </div>
+            <div class="hero-image" data-aos="fade-left">
+                <img src="images/hero-image.png" alt="CodeAcademy">
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="how-it-works dark">
+        <div class="content">
+            <h2 data-aos="fade-up">It's time to take action</h2>
+            <p data-aos="fade-up">Satoshi offers you the unique chance to discover the companies that have your data and reclaim it.</p>
+            <div class="how-it-works-cards">
+                <div class="card" data-aos="fade-up">
+                    <h3>Created with the latest technologies</h3>
+                    <p>We ensure our code is not just efficient and robust, but also highly adaptable and intuitive for developers.</p>
+                </div>
+                <div class="card" data-aos="fade-up">
+                    <h3>Built by developers for developers</h3>
+                    <p>You require not just a theme, but also exceptional tools to streamline the building and customization process.</p>
+                </div>
+                <div class="card" data-aos="fade-up">
+                    <h3>Made for great first impressions</h3>
+                    <p>Our theme is lighter and faster compared to the majority of themes available, delivering enhanced value for less.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="call-to-action" class="call-to-action">
+        <h2>Ready to get started?</h2>
+        <p>Save time and money while getting more productive than ever before. Kickstart your development process now.</p>
+        <button class="btn primary" onclick="scrollToSection('pricing')">Get started</button>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <h2 data-aos="fade-up">Opinie naszych użytkowników</h2>
+        <div class="testimonial-cards">
+            <div class="card" data-aos="fade-right">
+                <p>"CodeAcademy zmieniło moje życie! Teraz jestem w stanie tworzyć profesjonalne strony internetowe!"</p>
+                <h3>- Jan Kowalski</h3>
+            </div>
+            <div class="card" data-aos="fade-right">
+                <p>"Interaktywne kursy i quizy są świetne! Polecam każdemu, kto chce nauczyć się programowania."</p>
+                <h3>- Anna Nowak</h3>
+            </div>
+            <div class="card" data-aos="fade-right">
+                <p>"Dzięki CodeAcademy nauczyłem się Python i znalazłem pracę jako programista!"</p>
+                <h3>- Piotr Wiśniewski</h3>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 CodeAcademy. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+</body>
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="/javascript/scripts.js"></script>
+</html>
